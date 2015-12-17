@@ -21,11 +21,15 @@
 
 #include <string.h>
 #include "intro.h"
-
+#include "end.h"
 
 int main(int argc, char *argv[])
 {
-  runintro();
+  int ch;
+  ch = runintro();
+  
+  if(ch == -1)
+    runend();
 
   return 0;
 }

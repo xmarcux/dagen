@@ -19,7 +19,6 @@
 #include <unistd.h>
 #include <string.h>
 #include "inout.h"
-#include "end.h"
 
 #define ROWS 10
 #define GPLROWS 16
@@ -29,7 +28,7 @@
 #define BEEPSLEEP 500000
 #define GPLSLEEP  3000000
 
-void runintro(void)
+int runintro(void)
 {
   char *prnt[MAXROWS], *prntgpl[MAXROWS], optanswer[MAXCOLS];
   int i;
@@ -132,6 +131,12 @@ void runintro(void)
 
   if(!strcmp("öl", optanswer)){
     write_ch_to_opt("intro", "öl", optanswer);
-    runend();
+    return -1;
   }
+  else if(!strcmp("värktablett", optanswer)){
+    write_ch_to_opt("intro", "värktablett", optanswer);
+    return 1;
+  }
+  else
+    return -1;
 }

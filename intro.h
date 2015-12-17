@@ -21,5 +21,7 @@
 
 /*
  * Function runs the intro and prints it to screen.
+ * Returns number on chapter to run next.
+ * Returns -1 if end should be run.
  */
-void runintro(void);
+int runintro(void);

@@ -128,10 +128,10 @@ static void get_opt_choice(FILE *optfile, char *optanswer)
   const char opttoken[] = "</option>";
   int i, j, k, wrong=1;
   
-  opt[0] = (char *) malloc(sizeof(int)*(MAXCOLS+1));
+  opt[0] = (char *) malloc(sizeof(char)*(MAXCOLS+1));
   for(i=0;fgets(opt[i], MAXCOLS, optfile) && i<MAXROWS ; i++){
     opt[strlen(opt[i])-1] = '\0';
-    opt[i+1] = (char *) malloc(sizeof(int)*(MAXCOLS+1));
+    opt[i+1] = (char *) malloc(sizeof(char)*(MAXCOLS+1));
     if(!strncmp(opttoken, opt[i], strlen(opttoken))){
       opt[i] = NULL;
       break;
